@@ -4,6 +4,10 @@ public class Date {
     public static final String[] WEEKDAYS_SHORT = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
     public static final String[] CAN            = {"Giap", "At", "Binh", "Dinh", "Mau", "Ky", "Canh", "Tan", "Nham", "Quy"};
     public static final String[] CHI            = {"Ti", "Suu", "Dan", "Mao", "Thin", "Ty", "Ngo", "Mui", "Than", "Dau", "Tuat", "Hoi"};
+    public static final double[] SUNLONG_MAJOR = new double[] {
+            0, PI/6, 2*PI/6, 3*PI/6, 4*PI/6, 5*PI/6, PI, 7*PI/6, 8*PI/6, 9*PI/6, 10*PI/6, 11*PI/6
+    };
+    
     public static final double PI = Math.PI;
     private static final double LOCAL_TIMEZONE = 7.0; // Hanoi, Jakarta timezone..
 
@@ -167,9 +171,7 @@ public class Date {
         return new int[]{dd, mm, yyyy};
     }
 
-    public static final double[] SUNLONG_MAJOR = new double[] {
-            0, PI/6, 2*PI/6, 3*PI/6, 4*PI/6, 5*PI/6, PI, 7*PI/6, 8*PI/6, 9*PI/6, 10*PI/6, 11*PI/6
-    };
+    
 
     public static double SunLongitude(double jdn) {
         double T = (jdn - 2451545.0 ) / 36525; // Time in Julian centuries from 2000-01-01 12:00:00 GMT
